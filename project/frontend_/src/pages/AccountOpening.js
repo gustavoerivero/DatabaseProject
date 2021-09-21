@@ -6,7 +6,7 @@ import Footer from '../components/Footer';
 import NavBar from '../components/NavBar';
 
 import '../assets/css/index.css';
-import 'fontsource-roboto';
+import '@fontsource/roboto';
 
 const useStyles = makeStyles((theme) => ({
     root: {

@@ -128,7 +128,7 @@ const Confirm = ({ values }) => {
     // Voucher POST
     const voucher = {
       voucherNumber: values.voucherNumber,
-      date: voucherDate,
+      date: values.voucherDate,
     }
     console.log('Voucher will be added...', voucher);
     fetch(`http://localhost:8080/voucher/create/number/${values.accountNumber}`, {

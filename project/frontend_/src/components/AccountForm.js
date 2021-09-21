@@ -584,7 +584,6 @@ export default function AccountForm({ values, handleChange, customer }) {
                 }}
               >
                 <option aria-label="none" value="" />
-                <option value={0}>Estado</option>
                 {states.map((state) => {
                   return (
                     <option key={state.id} value={state.id}>
@@ -608,7 +607,6 @@ export default function AccountForm({ values, handleChange, customer }) {
                 }}
               >
                 <option aria-label="none" value="" />
-                <option value={0}>Municipio</option>
                 {municipalities.map((municipality) => {
                     return (
                       <option key={municipality.id} value={municipality.id}>
@@ -633,7 +631,6 @@ export default function AccountForm({ values, handleChange, customer }) {
                 }}
               >
                 <option aria-label="none" value="" />
-                <option value={0}>Agencia</option>
                 {offices.map((office) => {
                     return (
                       <option key={office.id} value={office.id}>
@@ -644,9 +641,7 @@ export default function AccountForm({ values, handleChange, customer }) {
                 }
               </Select>
             </FormControl>
-
             <ListItem className={classes.complete}>
-              {values.officeAddress = 'Hola hola'}
               <ListItemText
                 primary="Dirección de la agencia"
                 secondary={ values.officeAddress }
