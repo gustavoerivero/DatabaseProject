@@ -6,12 +6,13 @@ Centroccidental "Lisandro Alvarado", Venezuela._
 
 ## Comenzando 🚀
 
-_Para la elaboración del proyecto en cuestión, se utilizó como herramienta y lenguaje de programación para el backend de la aplicación Java con el framework de Spring Boot. Por otra parte, para la elaboración del frontend del proyecto, se usó HTML, CSS, JavaScript y el framework React.js, así como también librerías de JavaScript y React.js para agregarle mayores capas de estilo y funcionalidades (Material-UI y JsPDF). Asimismo, como Sistema Gestor de Base de Datos (SGBD) se utilizó MySQL y, para comprobar el funcionamiento del backend, se aprovecharon las funciones que provee la aplicación web Postman._
+Para la elaboración del proyecto en cuestión, se utilizó como herramienta y lenguaje de programación para el backend de la aplicación Java con el framework de Spring Boot. Por otra parte, para la elaboración del frontend del proyecto, se usó HTML, CSS, JavaScript y el framework React.js, así como también librerías de JavaScript y React.js para agregarle mayores capas de estilo y funcionalidades (Material-UI y JsPDF). Asimismo, como Sistema Gestor de Base de Datos (SGBD) se utilizó MySQL y, para comprobar el funcionamiento del backend, se aprovecharon las funciones que provee la aplicación web Postman.
 
-_En un aspecto más detallado, el frontend sigue la filosofía del framework React.js, donde se divide en componentes cada parte de las vistas, de manera que es más fácil tratar el frontend. Además, la aplicación tiene la función de generar un comprobante en formato PDF con el fin de asegurar los datos ingresados en la aplicación y, así, el cliente pueda dirigirse a la oficina seleccionada para culminar su proceso de apertura de cuenta bancaria._
+En un aspecto más detallado, el frontend sigue la filosofía del framework React.js, donde se divide en componentes cada parte de las vistas, de manera que es más fácil tratar el frontend. Además, la aplicación tiene la función de generar un comprobante en formato PDF con el fin de asegurar los datos ingresados en la aplicación y, así, el cliente pueda dirigirse a la oficina seleccionada para culminar su proceso de apertura de cuenta bancaria.
 
-_Por otra parte, el backend fue construido bajo la metodología de Programación Orientada a Objetos (POO), siguiendo el esquema Modelo-Vista-Controlador (MVC), de esta forma, la estructura del proyecto se hace fácilmente legible y permite un mejor mantenimiento y escalabilidad del proyecto en cuestión.
-Por último, se hizo uso de MySQL Workbrench por los beneficios que trae al ser uno de los SGBD ligeros y aceptados por diversos sistemas y plataformas, lo que ayudó a la construcción del proyecto sin inconveniente alguno._
+Por otra parte, el backend fue construido bajo la metodología de Programación Orientada a Objetos (POO), siguiendo el esquema Modelo-Vista-Controlador (MVC), de esta forma, la estructura del proyecto se hace fácilmente legible y permite un mejor mantenimiento y escalabilidad del proyecto en cuestión.
+
+Por último, se hizo uso de MySQL Workbrench por los beneficios que trae al ser uno de los SGBD ligeros y aceptados por diversos sistemas y plataformas, lo que ayudó a la construcción del proyecto sin inconveniente alguno.
 
 ## Enunciado ♨️
 Es un servicio que permite solicitar a través de nuestra página web la apertura de una cuenta financiera (corriente o de ahorros). Dirigido a personas naturales, mayores de edad. Servicio de fácil uso que permite la autogestión del cliente al momento de solicitar la apertura de una cuenta financiera.
@@ -85,6 +86,16 @@ _Es bueno recalcar que el código del backend fue desarrollado con:_
 
 * [Maven](https://maven.apache.org/) - Herramienta de Java para el desarrollo de aplicaciones con manipulación de variables o documentos con formato JSON.
 * [Spring Boot](https://spring.io/projects/spring-boot) - Framework de Java para el desarrollo de aplicaciones web.
+
+## Autores ✒️
+
+_Los autores de este proyecto son:_
+
+* **Gustavo Rivero** - [gustavoerivero](https://github.com/gustavoerivero)
+* **María Paredes**  - [Mariaparedes](https://github.com/Mariaparedes)
+* **Oswaldo Yanez**  - [WolvesDevelopers](https://github.com/WolvesDevelopers)
+
+
 
 
 ---
