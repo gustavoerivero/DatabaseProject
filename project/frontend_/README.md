@@ -1,70 +1,126 @@
-# Getting Started with Create React App
+# DatabaseProject/Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+_Este proyecto representa el proyecto final para la asignatura Base de Datos del 
+Programa de Ingeniería en Informática del Decanato de Ciencias y tecnología de la Universidad 
+Centroccidental "Lisandro Alvarado", Venezuela._
 
-## Available Scripts
+## Comenzando 🚀
 
-In the project directory, you can run:
+_Para la elaboración del proyecto en cuestión, se utilizó como herramienta y lenguaje de programación para el backend de la aplicación Java con el framework de Spring Boot. Por otra parte, para la elaboración del frontend del proyecto, se usó HTML, CSS, JavaScript y el framework React.js, así como también librerías de JavaScript y React.js para agregarle mayores capas de estilo y funcionalidades (Material-UI y JsPDF). Asimismo, como Sistema Gestor de Base de Datos (SGBD) se utilizó MySQL y, para comprobar el funcionamiento del backend, se aprovecharon las funciones que provee la aplicación web Postman._
 
-### `yarn start`
+_En un aspecto más detallado, el frontend sigue la filosofía del framework React.js, donde se divide en componentes cada parte de las vistas, de manera que es más fácil tratar el frontend. Además, la aplicación tiene la función de generar un comprobante en formato PDF con el fin de asegurar los datos ingresados en la aplicación y, así, el cliente pueda dirigirse a la oficina seleccionada para culminar su proceso de apertura de cuenta bancaria._
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+_Por otra parte, el backend fue construido bajo la metodología de Programación Orientada a Objetos (POO), siguiendo el esquema Modelo-Vista-Controlador (MVC), de esta forma, la estructura del proyecto se hace fácilmente legible y permite un mejor mantenimiento y escalabilidad del proyecto en cuestión.
+Por último, se hizo uso de MySQL Workbrench por los beneficios que trae al ser uno de los SGBD ligeros y aceptados por diversos sistemas y plataformas, lo que ayudó a la construcción del proyecto sin inconveniente alguno._
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Enunciado ♨️
+Es un servicio que permite solicitar a través de nuestra página web la apertura de una cuenta financiera (corriente o de ahorros). Dirigido a personas naturales, mayores de edad. Servicio de fácil uso que permite la autogestión del cliente al momento de solicitar la apertura de una cuenta financiera.
+* Siga la ruta a la sección de preapertura de cuentas.
+* Haga click en el botón Solicite su cuenta aquí.
+* Ingrese los datos solicitados por el sistema.
+* Seleccione la oficina de su preferencia.
+* El sistema emitirá un comprobante de su solicitud con los datos seleccionados.
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Pre-requisitos 📋
 
-### `yarn build`
+* Última versión estable de [Node.js](https://nodejs.org/en/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+_O, en su defecto_
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* Última versión estable de [Yarn](https://yarnpkg.com/)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* Java 8 o superior.
 
-### `yarn eject`
+* [Postman](https://www.postman.com/) para las solicitudes HTTP.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+* Para el proyecto se usó [IntelliJ](https://www.jetbrains.com/es-es/idea/) como IDE en la construcción
+del backend, pero también se puede utilizar [Eclipse](https://www.eclipse.org/downloads/packages/release/2021-09/r/eclipse-ide-enterprise-java-and-web-developers) o [NetBeans](https://netbeans.apache.org/).
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* Para el proyecto se usó [Visual Studio Code](https://code.visualstudio.com/) como editor de texto para la 
+elaboración del frontend, pero se puede utilizar otro editor de texto.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* [MySQL](https://www.mysql.com/products/workbench/) como SGBD.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Instalación 🔧
 
-## Learn More
+_Para comenzar, se procede con la descarga del repositorio. Para ello se debe abrir la consola,
+ubicarse en la carpera en la que desea guardar el proyecto y ejecutar el siguiente comando:_
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+git clone https://github.com/gustavoerivero/DatabaseProject.git
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+_Luego, situarse en la carpeta clonada del repositorio "DatabaseProject"._
 
-### Code Splitting
+_Para el caso de un Sistema Operativo Windows, con el comando:__
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+cd DatabaseProject/project
+```
 
-### Analyzing the Bundle Size
+* _Para preparar el entorno del frontend:_
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+_Se procede con la instalación de las librerías y dependencias necesarias para su ejecución.
+Primeramente, se accede a la carpeta del frontend._
 
-### Making a Progressive Web App
+```
+cd frontend_
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Luego, se instalan las dependencias del frontend. Cabe destacar que hay diferentes maneras de realizar esto._
 
-### Advanced Configuration
+_Con npm:_
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```
+npm install
+```
 
-### Deployment
+_De no funcionar, intentar con:_
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```
+npm i -f
+```
 
-### `yarn build` fails to minify
+_De utilizar yarn:_
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+yarn upgrade
+```
+
+_Una vez se logre la instalación de las dependencias, el frontend está listo para desplegarse._
+
+## Despliegue 📦
+
+* _Para realizar un desplegue local (localhost:3000) del frontend, se procede a ejecutar uno de los siguientes comandos:_
+
+_Con npm:_
+
+```
+npm start
+```
+
+_Con yarn:_
+```
+yarn start
+```
+
+
+## Construido con 🛠️
+
+_Es bueno recalcar que el código del frontend fue desarrollado con:_
+
+* [React.js](https://es.reactjs.org/) - El framework web usado.
+* [React Router](https://reactrouter.com/) - Librería de React.js para la navegación entre páginas.
+* [Material UI](https://material-ui.com/) - Librería de React.js para diseño de componentes visuales.
+* [React VFX](https://amagi.dev/react-vfx/) - Librería de React.js para añadir efectos VFX a imágenes, vídeos y/o textos.
+* [React Top Bar Progress Indicator](https://www.npmjs.com/package/react-topbar-progress-indicator) - Librería de React.js para añadir una barra superior que indica la carga de la página.
+* [jsPDF](https://www.npmjs.com/package/jspdf) - Librería para frontend con el propósito de generar archivos PDFs.
+* [Google reCAPTCHA v2](https://www.npmjs.com/package/react-google-recaptcha) - Componente de Google para realizar verificaciones con reCAPTCHA.
+* [React Router DOM](https://www.npmjs.com/package/react-router-dom) - Librería de React.js que facilita el redireccionamiento entre páginas.
+* [React Scroll](https://www.npmjs.com/package/react-scroll) - Librería de React.js que crea animaciones de desplazamiento al estilo "scroll" automático.
+* [react-swipeable-views](https://react-swipeable-views.com/getting-started/installation/) - Librería de React.js para desarrollar elementos "Carrusel".
+
+
+---
+⌨️ con ❤️ por [Equipo Polaris] 
