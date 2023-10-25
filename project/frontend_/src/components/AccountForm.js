@@ -78,7 +78,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function AccountForm({ values, handleChange, customer }) {
+export default function AccountForm({ values, handleChange, anotherHandle }) {
 
   const classes = useStyles();
 
@@ -87,6 +87,8 @@ export default function AccountForm({ values, handleChange, customer }) {
     name: '',
     status: ''
   }]);
+
+  const [address, setAddress] = useState("");
 
   useEffect(() => {
     if(!values.stateId)
@@ -99,7 +101,7 @@ export default function AccountForm({ values, handleChange, customer }) {
         .catch((error) => {
           console.log('States -> Error: ', error);
         })
-  })
+  }, [states])
 
   const [municipalities, setMunicipalities] = useState([{
     id: 0,
@@ -123,7 +125,7 @@ export default function AccountForm({ values, handleChange, customer }) {
         .catch((error) => {
           console.log('Municipalities -> Error: ', error);
         })
-  })
+  }, [values])
 
   const [offices, setOffices] = useState([{
     id: 0,
@@ -155,7 +157,7 @@ export default function AccountForm({ values, handleChange, customer }) {
         .catch((error) => {
           console.log('Offices -> Error: ', error);
         })
-  })
+  }, [values])
 
   useEffect(() => {
     if (values.officeId != '') {
@@ -165,13 +167,15 @@ export default function AccountForm({ values, handleChange, customer }) {
           values.officeCode = result.code;
           values.officeName = result.name;
           values.officeAddress = result.address;
+
+          setAddress(result.address);
           console.log(result);
         })
         .catch((error) => {
           console.log('Office -> Error: ', error);
         })
     }
-  })
+  }, [values, address])
 
   return (
     <form autoComplete='off'>
@@ -431,8 +435,8 @@ export default function AccountForm({ values, handleChange, customer }) {
               placeholder="Origen fondo"
               required
               className={classes.leftField}
-              onChange={handleChange('fundSource')}
-              defaultValue={values.fundSource}
+              onChange={handleChange('sourceFund')}
+              defaultValue={values.sourceFund}
             />
 
             <TextField
@@ -441,8 +445,8 @@ export default function AccountForm({ values, handleChange, customer }) {
               placeholder="Destino fondo"
               required
               className={classes.rightField}
-              onChange={handleChange('fundArrival')}
-              defaultValue={values.fundArrival}
+              onChange={handleChange('arrivalFund')}
+              defaultValue={values.arrivalFund}
             />
 
             <FormControl component="fieldset" className={classes.foreign}>
@@ -467,8 +471,8 @@ export default function AccountForm({ values, handleChange, customer }) {
                   <InputLabel htmlFor="source-foreign-fund">Origen</InputLabel>
                   <Select
                     native
-                    value={values.fundSourceForeignUse}
-                    onChange={handleChange('fundSourceForeignUse')}
+                    value={values.sourceForeignFund}
+                    onChange={handleChange('sourceForeignFund')}
                     label="Origen"
                     inputProps={{
                       name: 'sourceForeignFund',
@@ -489,8 +493,8 @@ export default function AccountForm({ values, handleChange, customer }) {
                   <InputLabel htmlFor="arrival-foreign-fund">Destino</InputLabel>
                   <Select
                     native
-                    value={values.fundArrivalForeignUse}
-                    onChange={handleChange('fundArrivalForeignUse')}
+                    value={values.arrivalForeignFund}
+                    onChange={handleChange('arrivalForeignFund')}
                     label="Destino"
                     inputProps={{
                       name: 'arrivalForeignFund',
@@ -516,8 +520,8 @@ export default function AccountForm({ values, handleChange, customer }) {
               </InputLabel>
               <Select
                 native
-                value={values.complementReason}
-                onChange={handleChange('complementReason')}
+                value={values.requestReason}
+                onChange={handleChange('requestReason')}
                 label="Tipo de cuenta"
                 inputProps={{
                   name: 'requestReason',
@@ -544,8 +548,8 @@ export default function AccountForm({ values, handleChange, customer }) {
               </InputLabel>
               <Select
                 native
-                value={values.accountUse}
-                onChange={handleChange('accountUse')}
+                value={values.dedicatedUse}
+                onChange={handleChange('dedicatedUse')}
                 label="Monto estimado de movilización de la cuenta"
                 inputProps={{
                   name: 'dedicatedUse',
@@ -623,7 +627,17 @@ export default function AccountForm({ values, handleChange, customer }) {
               <Select
                 native
                 value={values.officeId}
-                onChange={handleChange('officeId')}
+                onChange={(evt) => {
+                  anotherHandle("officeId", evt.target.value);
+
+                  const office = offices.find(item => item.id === values.officeId);
+
+                  if (office) {
+                    anotherHandle("officeCode", office.code);
+                    anotherHandle("officeName", office.name);
+                    anotherHandle("officeAddress", office.address);
+                  }
+                }}
                 label="Agencia"
                 inputProps={{
                   name: 'agency',
@@ -644,7 +658,7 @@ export default function AccountForm({ values, handleChange, customer }) {
             <ListItem className={classes.complete}>
               <ListItemText
                 primary="Dirección de la agencia"
-                secondary={ values.officeAddress }
+                secondary={ address }
               />
             </ListItem>
           </Form>
@@ -700,8 +714,8 @@ export default function AccountForm({ values, handleChange, customer }) {
                         values.arrivalForeignFund !== '')) &&
                     values.requestReason !== '' &&
                     values.dedicatedUse !== '' &&
-                    values.officeState !== '' &&
-                    values.officeMunicipality !== '' &&
+                    values.stateId !== '' &&
+                    values.municipalityId !== '' &&
                     values.agency !== ''
                     ? false
                     : true

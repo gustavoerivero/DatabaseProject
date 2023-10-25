@@ -46,19 +46,19 @@ export default function Account({ location }) {
         accountType: '',
 
         // Request Values
-        fundSource: '',
-        fundArrival: '',
+        sourceFund: '',
+        arrivalFund: '',
         estimatedAccount: '',
         averageTransactions: '',
 
         // Complement Values
-        complementReason: '',
-        accountUse: '',
+        requestReason: '',
+        dedicatedUse: '',
 
         // ForeignUse Values
         isNeedForeignUse: '0',
-        fundSourceForeignUse: '0',
-        fundArrivalForeignUse: '0',
+        sourceForeignFund: '0',
+        arrivalForeignFund: '0',
 
         // Voucher Values
         voucherNumber: 0,
@@ -82,16 +82,21 @@ export default function Account({ location }) {
         setValues({ ...values, [input]: e.target.value });
     };
 
+    const anotherHandle = (input, value) => {
+        setValues({ ...values, [input]: value });
+    };
+
     return (
         <div className={classes.root}>
             <CssBaseline />
             <NavBar />
             <div className={classes.divisor}></div>
             <Paper>
-                <Grid container spacing={1}>                   
-                    <AccountForm 
-                        values={values} 
+                <Grid container spacing={1}>
+                    <AccountForm
+                        values={values}
                         handleChange={handleChange}
+                        anotherHandle={anotherHandle}
                     />
                 </Grid>
             </Paper>

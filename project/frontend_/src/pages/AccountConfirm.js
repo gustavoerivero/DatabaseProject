@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const convertDate = (date) => {
+const convertDate = (date = new Date()) => {
     return (date.getMonth() + 1).toString() + date.getDate().toString() + date.getFullYear().toString();
 }
 
@@ -51,10 +51,11 @@ export default function AccountConfirm({ location }) {
         landlineNumber: location.values.landlineNumber,
 
         // Second Step
-        accountNumber: Number(location.values.documentNumber + convertDate(new Date()) + location.values.officeCode),
+        accountNumber: location.values.documentNumber + convertDate() + location.values.officeId ?? 0,
         accountType: location.values.accountType,
         estimatedAccount: location.values.estimatedAccount,
         averageTransactions: location.values.averageTransactions,
+        isNeedForeignUse: location.values.isNeedForeignUse,
         sourceFund: location.values.sourceFund,
         arrivalFund: location.values.arrivalFund,
         foreignFund: location.values.foreignFund,
@@ -64,15 +65,16 @@ export default function AccountConfirm({ location }) {
         // Third Step
         requestReason: location.values.requestReason,
         dedicatedUse: location.values.dedicatedUse,
-        officeState: location.values.officeState,
-        officeMunicipality: location.values.officeMunicipality,
-        agency: location.values.agency,
-        agencyAddress: location.values.agencyAddress,
+        officeState: location.values.stateId,
+        officeMunicipality: location.values.municipalityId,
+        agency: location.values.officeName,
+        agencyAddress: location.values.officeAddress,
 
         // Last Step
-        voucherNumber: Number(convertDate(new Date()) + location.values.documentNumber + location.values.officeCode),
+        voucherNumber: Number(convertDate(new Date()) + location.values.documentNumber + location.values.officeId),
         voucherDate: new Date(),
-        officeCode: location.officeCode,
+        officeCode: location.values.officeCode,
+        officeId: location.values.officeId
 
     });
 
